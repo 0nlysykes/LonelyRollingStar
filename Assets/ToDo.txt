@@ -1,0 +1,26 @@
+Things to do:
+When ball gathers many object it stops registering other objects.
+This is probably because every object in the playerparent is CONSTANTLY colliding with each other object.
+
+Figure out how to remove limit of objects player can pick up.
+
+DAY 2
+Figured out how to set limitless objects to attach to origin
+also added player rotation on q and e keys
+camera zooms out when the player picks up an object, but it goes too far too quickly
+set a max limit for camera zoom out
+add force to player on x axis to make an auto scroller
+
+DAY 3
+Talked about ideas for the game, every idea includes when a piece gets 
+destroyed it destroys all other pieces attached to it.  This is because
+any object that is in the player "blob" is only attached to ONE object. 
+If we set up a parent-child hierarchy for each object in the blob (so that
+when an object gets added it is a child of the individual object it was hit by)
+then we can set up a recursive structure for when any object gets hit
+to send a function call to destroy children to it's children, and then destroy
+its children.
+
+This will make it so that when the player blob is struck by an enemy/bullet,
+all remaining parts of the player blob have a direct path back to the original
+player circle.
